@@ -4,29 +4,17 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     var score = "";
     var tempScore = 0;
     if (pointsFirstPlayer === pointsSecondPlayer) {
-        switch (pointsFirstPlayer) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
-        }
+        evenResult();
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
-        var minusResult = pointsFirstPlayer - pointsSecondPlayer;
-        if (minusResult === 1) {score = "Advantage player1";}
-        else if (minusResult === -1) {score = "Advantage player2";}
-        else if (minusResult >= 2) {score = "Win for player1";}
-        else {score = "Win for player2";}
+        lateGameResult();
     } else {
+        earlyGameResult();
+    }
+    return score;
+
+    function earlyGameResult() {
         for (var i = 1; i < 3; i++) {
-            if (i === 1) {tempScore = pointsFirstPlayer;}
+            if (i === 1) { tempScore = pointsFirstPlayer; }
             else {
                 score += "-";
                 tempScore = pointsSecondPlayer;
@@ -47,7 +35,31 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
             }
         }
     }
-    return score;
+
+    function lateGameResult() {
+        var minusResult = pointsFirstPlayer - pointsSecondPlayer;
+        if (minusResult === 1) { score = "Advantage player1"; }
+        else if (minusResult === -1) { score = "Advantage player2"; }
+        else if (minusResult >= 2) { score = "Win for player1"; }
+        else { score = "Win for player2"; }
+    }
+
+    function evenResult() {
+        switch (pointsFirstPlayer) {
+            case 0:
+                score = "Love-All";
+                break;
+            case 1:
+                score = "Fifteen-All";
+                break;
+            case 2:
+                score = "Thirty-All";
+                break;
+            default:
+                score = "Deuce";
+                break;
+        }
+    }
 }
 
 module.exports = getScore;
