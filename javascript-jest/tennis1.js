@@ -1,8 +1,7 @@
 'use strict';
 
 function getScore(pointsFirstPlayer, pointsSecondPlayer) {
-    var score = "";
-    var tempScore = 0;
+    
     if (pointsFirstPlayer === pointsSecondPlayer) {
         return evenResult(pointsFirstPlayer);
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
@@ -10,10 +9,11 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     } else {
         return earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
     }
-    return score;
+    
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
         var score = "";
+        var tempScore = 0;
         for (var i = 1; i < 3; i++) {
             if (i === 1) { tempScore = pointsFirstPlayer; }
             else {
