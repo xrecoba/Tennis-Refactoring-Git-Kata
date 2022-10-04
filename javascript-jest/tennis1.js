@@ -6,7 +6,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     if (pointsFirstPlayer === pointsSecondPlayer) {
         return evenResult(pointsFirstPlayer);
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
-        lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
+        return lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
         earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
     }
@@ -38,10 +38,10 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
 
     function lateGameResult(pointsFirstPlayer, pointsSecondPlayer) {
         var minusResult = pointsFirstPlayer - pointsSecondPlayer;
-        if (minusResult === 1) { score = "Advantage player1"; }
-        else if (minusResult === -1) { score = "Advantage player2"; }
-        else if (minusResult >= 2) { score = "Win for player1"; }
-        else { score = "Win for player2"; }
+        if (minusResult === 1) { return "Advantage player1"; }
+        else if (minusResult === -1) { return "Advantage player2"; }
+        else if (minusResult >= 2) { return "Win for player1"; }
+        else { return "Win for player2"; }
     }
 
     function evenResult(pointsFirstPlayer) {
