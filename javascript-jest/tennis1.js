@@ -15,8 +15,8 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         var score = "";
         var tempScore = 0;
         for (var i = 1; i < 2; i++) {
-            if (i === 1) { tempScore = pointsFirstPlayer; }            
-            switch (tempScore) {
+            
+            switch (pointsFirstPlayer) {
                 case 0:
                     score += "Love";
                     break;
@@ -33,9 +33,8 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         }
         for (var i = 2; i < 3; i++) {            
             score += "-";
-            tempScore = pointsSecondPlayer;
             
-            switch (tempScore) {
+            switch (pointsSecondPlayer) {
                 case 0:
                     score += "Love";
                     break;
