@@ -8,8 +8,19 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         return lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
         return earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
+    }    
+
+    function evenResult(pointsFirstPlayer) {
+        switch (pointsFirstPlayer) {
+            case 0:
+                return "Love-All";
+            case 1:
+                return "Fifteen-All";                
+            case 2:
+                return "Thirty-All";                            
+        }
+        return "Deuce";                
     }
-    
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
         return `${scorePerPoints(pointsFirstPlayer)}-${scorePerPoints(pointsSecondPlayer)}`        
@@ -34,19 +45,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         else if (minusResult === -1) { return "Advantage player2"; }
         else if (minusResult >= 2) { return "Win for player1"; }
         else { return "Win for player2"; }
-    }
-
-    function evenResult(pointsFirstPlayer) {
-        switch (pointsFirstPlayer) {
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";                
-            case 2:
-                return "Thirty-All";                            
-        }
-        return "Deuce";                
-    }
+    }    
 }
 
 module.exports = getScore;
