@@ -12,39 +12,20 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
-        var score = "";        
-        
+        return `${scorePerPoints(pointsFirstPlayer)}-${scorePerPoints(pointsSecondPlayer)}`        
+
+        function scorePerPoints(pointsFirstPlayer) {
             switch (pointsFirstPlayer) {
                 case 0:
-                    score += "Love";
-                    break;
+                    return "Love";
                 case 1:
-                    score += "Fifteen";
-                    break;
+                    return "Fifteen";                    
                 case 2:
-                    score += "Thirty";
-                    break;
+                    return "Thirty";                    
                 case 3:
-                    score += "Forty";
-                    break;
+                    return "Forty";
             }
-            score += "-";
-            
-            switch (pointsSecondPlayer) {
-                case 0:
-                    score += "Love";
-                    break;
-                case 1:
-                    score += "Fifteen";
-                    break;
-                case 2:
-                    score += "Thirty";
-                    break;
-                case 3:
-                    score += "Forty";
-                    break;
-            }
-        return score;
+        }
     }
 
     function lateGameResult(pointsFirstPlayer, pointsSecondPlayer) {
