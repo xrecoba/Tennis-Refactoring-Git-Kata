@@ -4,15 +4,15 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     var score = "";
     var tempScore = 0;
     if (pointsFirstPlayer === pointsSecondPlayer) {
-        evenResult();
+        evenResult(pointsFirstPlayer);
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
-        lateGameResult();
+        lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
-        earlyGameResult();
+        earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
     }
     return score;
 
-    function earlyGameResult() {
+    function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
         for (var i = 1; i < 3; i++) {
             if (i === 1) { tempScore = pointsFirstPlayer; }
             else {
@@ -36,7 +36,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         }
     }
 
-    function lateGameResult() {
+    function lateGameResult(pointsFirstPlayer, pointsSecondPlayer) {
         var minusResult = pointsFirstPlayer - pointsSecondPlayer;
         if (minusResult === 1) { score = "Advantage player1"; }
         else if (minusResult === -1) { score = "Advantage player2"; }
@@ -44,7 +44,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         else { score = "Win for player2"; }
     }
 
-    function evenResult() {
+    function evenResult(pointsFirstPlayer) {
         switch (pointsFirstPlayer) {
             case 0:
                 score = "Love-All";
