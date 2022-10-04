@@ -12,10 +12,8 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
-        var score = "";
-        var tempScore = 0;
-        for (var i = 1; i < 2; i++) {
-            
+        var score = "";        
+        
             switch (pointsFirstPlayer) {
                 case 0:
                     score += "Love";
@@ -30,8 +28,6 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
                     score += "Forty";
                     break;
             }
-        }
-        for (var i = 2; i < 3; i++) {            
             score += "-";
             
             switch (pointsSecondPlayer) {
@@ -48,7 +44,6 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
                     score += "Forty";
                     break;
             }
-        }
         return score;
     }
 
