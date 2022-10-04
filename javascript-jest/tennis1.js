@@ -15,11 +15,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         var score = "";
         var tempScore = 0;
         for (var i = 1; i < 2; i++) {
-            if (i === 1) { tempScore = pointsFirstPlayer; }
-            else {
-                score += "-";
-                tempScore = pointsSecondPlayer;
-            }
+            if (i === 1) { tempScore = pointsFirstPlayer; }            
             switch (tempScore) {
                 case 0:
                     score += "Love";
@@ -35,12 +31,10 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
                     break;
             }
         }
-        for (var i = 2; i < 3; i++) {
-            if (i === 1) { tempScore = pointsFirstPlayer; }
-            else {
-                score += "-";
-                tempScore = pointsSecondPlayer;
-            }
+        for (var i = 2; i < 3; i++) {            
+            score += "-";
+            tempScore = pointsSecondPlayer;
+            
             switch (tempScore) {
                 case 0:
                     score += "Love";
