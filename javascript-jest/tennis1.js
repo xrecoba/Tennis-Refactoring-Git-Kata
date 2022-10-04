@@ -4,7 +4,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     var score = "";
     var tempScore = 0;
     if (pointsFirstPlayer === pointsSecondPlayer) {
-        evenResult(pointsFirstPlayer);
+        return evenResult(pointsFirstPlayer);
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
         lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
@@ -47,18 +47,13 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     function evenResult(pointsFirstPlayer) {
         switch (pointsFirstPlayer) {
             case 0:
-                score = "Love-All";
-                break;
+                return "Love-All";
             case 1:
-                score = "Fifteen-All";
-                break;
+                return "Fifteen-All";                
             case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
+                return "Thirty-All";                            
         }
+        return "Deuce";                
     }
 }
 
