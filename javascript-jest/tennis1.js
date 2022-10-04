@@ -12,7 +12,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     
     function evenResult(pointsFirstPlayer) {
         var evenScoresBeforeDeuce = ["Love-All", "Fifteen-All", "Thirty-All"];
-            return evenScoresBeforeDeuce[pointsFirstPlayer] ?? "Deuce";
+        return evenScoresBeforeDeuce[pointsFirstPlayer] ?? "Deuce";
     }
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
@@ -33,11 +33,17 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     }
 
     function lateGameResult(pointsFirstPlayer, pointsSecondPlayer) {
-        var minusResult = pointsFirstPlayer - pointsSecondPlayer;
-        if (minusResult === 1) { return "Advantage player1"; }
-        else if (minusResult === -1) { return "Advantage player2"; }
-        else if (minusResult >= 2) { return "Win for player1"; }
-        else { return "Win for player2"; }
+        const resultBasedOnPointsDifference = {}
+        resultBasedOnPointsDifference["-4"] = "Win for player2",
+        resultBasedOnPointsDifference["-3"] = "Win for player2",
+        resultBasedOnPointsDifference["-2"] = "Win for player2",
+        resultBasedOnPointsDifference["-1"] = "Advantage player2",
+        resultBasedOnPointsDifference["1"] = "Advantage player1",
+        resultBasedOnPointsDifference["2"] = "Win for player1",
+        resultBasedOnPointsDifference["3"] = "Win for player1",
+        resultBasedOnPointsDifference["4"] = "Win for player1"
+
+        return resultBasedOnPointsDifference[pointsFirstPlayer - pointsSecondPlayer];
     }    
 }
 
