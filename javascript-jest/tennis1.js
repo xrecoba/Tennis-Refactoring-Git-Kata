@@ -8,11 +8,12 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
         return lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
-        earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
+        return earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
     }
     return score;
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
+        var score = "";
         for (var i = 1; i < 3; i++) {
             if (i === 1) { tempScore = pointsFirstPlayer; }
             else {
@@ -34,6 +35,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
                     break;
             }
         }
+        return score;
     }
 
     function lateGameResult(pointsFirstPlayer, pointsSecondPlayer) {
