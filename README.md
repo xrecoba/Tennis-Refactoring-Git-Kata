@@ -1,3 +1,78 @@
+# Git Kata on top of Tennis Refactoring Kata
+
+Imagine your have been working on this code and you have been doing multiple commits "for you". The sequence of commits as it is it's hard to understand by anyone else, so you have decided to clean your commits before pushing.
+
+## One last thing
+Before cleaning up your commits, you realized you'd like to add one minor improvement:
+* Move Love, Fifteen, Thirty and Forty to constants (don't commit yet)
+* Remove unnecessary else’s from Main function (don't commit yet)
+
+Now, save both changes with a commit for each one.
+
+## Oh no! Another last thing
+Maybe the condition in the two if's that check if players are even or if we're in the late game could be extracted into a couple of functions to add some semantics. Let's do it:
+* Create a function to give semantics to first if (even case)
+* Commit the change
+* Create another function to give semantics to the second if (late game case).
+* A new commit for this change doesn't seem worthy, amend the commit you just created and adapt the message if necessary
+
+## Let's move stuff
+There’s a commit which deletes all the tennis Katas in Emily’s repo except for the Javascript-Jest one. 
+This commit is one of the last ones, but it would make more sense before the whole refactoring. Move that commit to the beginning.
+
+## Wow, I don't need this at all
+You see? There's a commit that’s fixing an error introduced in another one.
+Remove both commits as there’s no point in keeping them.
+
+## Some commits are tiny
+There are some commits which are very small and fine grained. All of a sudden you feel the urge merge them together in one single commit with a higher level of abstraction. Can you do that?
+
+## Tell a story
+The story told by the commits lacks some consistency and somehow this doesn’t seem to be the best way to explain the changes. What about retelling the story as you’d like to read it?
+
+Keep in mind these tips for a good commit:
+- Explains the why
+- Tells a story as you’d like to read it
+- First line has less than 80 chars
+- Cohesive
+- Intermediate commits compile
+- Tells a story as you’d like to read it
+- Blank line between subject and body
+- Uses imperative in subject and no finishing point
+- Right spelling
+- Not “too” big
+
+
+## Concepts to practice at every step
+Look at them only if you need help :P.
+<details>
+           <summary>One last thing</summary>
+           <p>Committing part of your changes using stages. An example <a href="https://levelup.gitconnected.com/staging-commits-with-git-add-patch-1eb18849aedb">here</a></p>
+</details>
+<details>
+           <summary>Oh no! another last thing</summary>
+           <p><a href="https://git-scm.com/docs/git-commit">Amending</a></p>
+</details>
+<details>
+           <summary>Let's move stuff</summary>
+           <p>Move via <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
+</details>
+<details>
+           <summary>Wow, I don't need this at all</summary>
+           <p>Drop via <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
+</details>
+<details>
+           <summary>Some commits are tiny</summary>
+           <p>Squash or fixup via <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
+</details>
+<details>
+           <summary>Tell a story</summary>
+           <p><a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
+</details>
+
+Built on top of [Emily Bache's Tennis kata](https://github.com/emilybache/Tennis-Refactoring-Kata), whose readme is as follows:
+
+
 # Tennis Refactoring Kata
 
 Imagine you work for a consultancy company, and one of your colleagues has been doing some work for the Tennis Society. The contract is for 10 hours billable work, and your colleague has spent 8.5 hours working on it. Unfortunately he has now fallen ill. He says he has completed the work, and the tests all pass. Your boss has asked you to take over from him. She wants you to spend an hour or so on the code so she can bill the client for the full 10 hours. She instructs you to tidy up the code a little and perhaps make some notes so you can give your colleague some feedback on his chosen design. You should also prepare to talk to your boss about the value of this refactoring work, over and above the extra billable hours.
