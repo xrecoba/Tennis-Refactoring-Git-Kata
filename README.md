@@ -18,17 +18,20 @@ Maybe the condition in the two if's that check if players are even or if we're i
 
 ## Let's move stuff
 There’s a commit which deletes all the tennis Katas in Emily’s repo except for the Javascript-Jest one. 
-This commit is one of the last ones, but it would make more sense before the whole refactoring. Move that commit to the beginning.
+This commit is one of the last ones, but it would make more sense before the whole refactoring:
+* Move that commit to the beginning.
 
 ## Wow, I don't need this at all
 You see? There's a commit that’s fixing an error introduced in another one.
-Remove both commits as there’s no point in keeping them.
+* Remove both commits as there’s no point in keeping them.
 
 ## It's not you, it's me...
-A change related to _evenResult_ function slipped into commit "Refactor late game result to use array". Split the commit in two and move the _evenResult_ change into the previous commit "Rewrite even result to loookup"
+A change related to _evenResult_ function slipped into the commit "Refactor late game result to use array". 
+* Split the commit in two and move the _evenResult_ change into the previous commit "Rewrite even result to loookup"
 
 ## Some commits are tiny
-There are some commits which are very small and fine grained. All of a sudden you feel the urge merge them together in one single commit with a higher level of abstraction. Can you do that?
+There are some commits which are very small and fine grained. All of a sudden you feel the urge merge them together in one single commit with a higher level of abstraction. 
+* Compact some small commits into a bigger one
 
 ## Tell a story
 The story told by the commits lacks some consistency and somehow this doesn’t seem to be the best way to explain the changes. What about retelling the story as you’d like to read it?
@@ -39,15 +42,18 @@ Keep in mind these tips for a good commit:
 - First line has less than 80 chars
 - Cohesive
 - Intermediate commits compile
-- Tells a story as you’d like to read it
-- Blank line between subject and body
+- Has a blank line between subject and body
 - Uses imperative in subject and no finishing point
-- Right spelling
+- Has proper spelling
 - Not “too” big
 
+Your task:
+* Rewrite git history so the story is more readable
+* Apply git commit best practices to the messages
+* Use [GitMoji](https://gitmoji.dev/) if you please 😊 
 
 ## Concepts to practice at every step
-Look at them only if you need help :P.
+Look at them only if you need help 😛.
 <details>
            <summary>One last thing</summary>
            <p>Committing part of your changes using stages. An example <a href="https://levelup.gitconnected.com/staging-commits-with-git-add-patch-1eb18849aedb">here</a></p>
@@ -78,8 +84,15 @@ Look at them only if you need help :P.
            <p><a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
 </details>
 
-Built on top of [Emily Bache's Tennis kata](https://github.com/emilybache/Tennis-Refactoring-Kata), whose readme is as follows:
+## Questions to discuss afterwards
+* What do you think of your Git history compared to the original one?
+* Would it help your "future you" the effort invested in improving the commit story?
+* In which task did you struggle the most? Why?
+* What is your biggest learning of today (if any)?
+- - - -
 
+> Built on top of [Emily Bache's Tennis kata](https://github.com/emilybache/Tennis-Refactoring-Kata), thanks Emily for sharing so much 🙌🙌.
+> Here you have her repo readme in case it helps you grab the context of the exercise:
 
 # Tennis Refactoring Kata
 
