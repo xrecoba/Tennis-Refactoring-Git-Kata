@@ -24,6 +24,9 @@ This commit is one of the last ones, but it would make more sense before the who
 You see? There's a commit that’s fixing an error introduced in another one.
 Remove both commits as there’s no point in keeping them.
 
+## It's not you, it's me...
+A change related to _evenResult_ function slipped into commit "Refactor late game result to use array". Split the commit in two and move the _evenResult_ change into the previous commit "Rewrite even result to loookup"
+
 ## Some commits are tiny
 There are some commits which are very small and fine grained. All of a sudden you feel the urge merge them together in one single commit with a higher level of abstraction. Can you do that?
 
@@ -60,6 +63,11 @@ Look at them only if you need help :P.
 <details>
            <summary>Wow, I don't need this at all</summary>
            <p>Drop via <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
+</details>
+
+<details>
+           <summary>It's not you, it's me...</summary>
+           <p><a href="https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits">Split a commit</a> (be sure to use the commit previous to the one you wanna break) and fixup via <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">interactive rebase</a></p>
 </details>
 <details>
            <summary>Some commits are tiny</summary>
