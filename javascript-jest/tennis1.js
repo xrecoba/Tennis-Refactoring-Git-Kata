@@ -4,7 +4,7 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
     
     if (pointsFirstPlayer === pointsSecondPlayer) {
         return evenResult(pointsFirstPlayer);
-    } else if (pointsFirstPlayer >= 3 || pointsSecondPlayer >= 3) {
+    } else if (pointsFirstPlayer >= 4 || pointsSecondPlayer >= 4) {
         return lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
         return earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
