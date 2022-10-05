@@ -8,18 +8,11 @@ function getScore(pointsFirstPlayer, pointsSecondPlayer) {
         return lateGameResult(pointsFirstPlayer, pointsSecondPlayer);
     } else {
         return earlyGameResult(pointsFirstPlayer, pointsSecondPlayer);
-    }    
-
+    }
+    
     function evenResult(pointsFirstPlayer) {
-        switch (pointsFirstPlayer) {
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";                
-            case 2:
-                return "Thirty-All";                            
-        }
-        return "Deuce";                
+        var evenScoresBeforeDeuce = ["Love-All", "Fifteen-All", "Thirty-All"];
+            return evenScoresBeforeDeuce[pointsFirstPlayer] ?? "Deuce";
     }
 
     function earlyGameResult(pointsFirstPlayer, pointsSecondPlayer) {
