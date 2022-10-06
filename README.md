@@ -41,6 +41,7 @@ Keep in mind these tips for a good commit:
 - Tells a story as you’d like to read it
 - First line has less than 80 chars
 - Cohesive
+- Doesn’t mix reformatting, refactoring and new code
 - Intermediate commits compile
 - Has a blank line between subject and body
 - Uses imperative in subject and no finishing point
