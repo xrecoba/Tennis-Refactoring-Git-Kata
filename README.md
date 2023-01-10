@@ -1,6 +1,6 @@
 # Git Kata on top of Tennis Refactoring Kata
 
-Imagine your have been working on this code and you have been doing multiple commits "for you". The sequence of commits as it is it's hard to understand by anyone else, so you have decided to clean your commits before pushing.
+Imagine your have been working on this code and you have been doing multiple commits "for you" in Tennis1.js. The sequence of commits as it is it's hard to understand by anyone else, so you have decided to clean your commits before pushing.
 
 ## One last thing
 Before cleaning up your commits, you realized you'd like to add one minor improvement:
